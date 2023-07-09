@@ -19,8 +19,9 @@ public class EmployeeController {
     }
 
     @GetMapping("/add")
-    public ResponseEntity<Employee> add(@RequestParam String firstName, @RequestParam String lastName) {
-        Employee employee = employeeService.addEmployee(firstName, lastName);
+    public ResponseEntity<Employee> add(@RequestParam String firstName, @RequestParam String lastName,
+                                        @RequestParam Integer salary, @RequestParam Integer departamentID) {
+        Employee employee = employeeService.addEmployee(firstName, lastName, salary, departamentID);
         return ResponseEntity.ok(employee);
     }
 
